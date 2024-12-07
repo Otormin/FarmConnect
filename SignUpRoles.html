@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #007856;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #ffffff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #2B3940;
+            margin-bottom: 20px;
+        }
+
+        .container a {
+            text-decoration: none;
+        }
+
+        .container button {
+            background-color: #00B074;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            padding: 15px 25px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            width: 350px;
+        }
+
+        .container button:hover {
+            background-color: #007856;
+        }
+
+        .text-center {
+            margin-top: 20px;
+        }
+
+        .text-center p {
+            color: #2B3940;
+            font-size: 16px;
+        }
+
+        .text-center a {
+            color: #2B9BFF;
+            font-weight: bold;
+        }
+
+        .text-center a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to FarmConnect</h1>
+        <a href="RegisterAsFarmer.php"><button>Register as Farmer</button></a>
+        <a href="RegisterAsWorker.php"><button>Register as Worker</button></a>
+        <a href="RegisterAsConsumer.php"><button>Register as Consumer</button></a>
+        <div class="text-center">
+            <p>Already Have Account?</p>
+            <a href="LoginAs.html">Sign in</a>
+        </div>
+    </div>
+</body>
+</html>

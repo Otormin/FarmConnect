@@ -1,0 +1,20 @@
+{
+    "name": "farmconnect/project",
+    "description": "A web application connecting farmers with workers and customers.",
+    "type": "project",
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Farmconnect\\Project\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Young Jesse"
+        }
+    ],
+    "minimum-stability": "stable"
+}

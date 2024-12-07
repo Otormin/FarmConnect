@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmConnect - Connecting Farmers to Consumers & Workers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #00795a;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 100px auto;
+            background: #EFFDF5;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #2B3940;
+            margin-bottom: 30px;
+        }
+
+        button {
+            background-color: #00B074;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px 0;
+            transition: background-color 0.3s ease;
+            width: 350px;
+        }
+
+        button:hover {
+            background-color: #00795a;
+        }
+
+        .sign-up-link {
+            color: #2B9BFF;
+            text-decoration: none;
+        }
+
+        .sign-up-link:hover {
+            text-decoration: underline;
+        }
+
+        .action-buttons {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .action-buttons a {
+            margin-right: 15px;
+        }
+
+        .action-buttons p {
+            color: #2B3940;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to FarmConnect</h1>
+        <div class="action-buttons">
+            <a href="LoginAsFarmer.php"><button>Login as Farmer</button></a>
+            <a href="LoginAsWorker.php"><button>Login as Worker</button></a>
+            <a href="LoginAsConsumer.php"><button>Login as Consumer</button></a>
+        </div>
+        <div>
+            <p>Don't have an account yet?</p>
+            <a class="sign-up-link" href="SignUpRoles.html">Sign up</a>
+        </div>
+    </div>
+</body>
+</html>
