@@ -79,7 +79,7 @@ session_start();
                         <a href="about.html" class="nav-item nav-link">About</a>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
-                    <a href="Profile.php" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Profile<i class="fa fa-arrow-right ms-3"></i></a>
+                    <a href="Profile.php" class="btn btn-primary rounded-0 py-4 px-lg-5 d-lg-block">Profile<i class="fa fa-arrow-right ms-3"></i></a>
                 </div>
             </nav>
         <!-- Navbar End -->
@@ -120,12 +120,6 @@ session_start();
                                 echo    '<div class="col-lg-8">
                                             <div class="d-flex align-items-center mb-5">
                                                 <img class="flex-shrink-0 img-fluid border rounded" src="'.$image.'" alt="" style="width: 100%; height: 400px;"></br></br></br>
-                                                <div class="text-start ps-4">
-                                                    <h3 class="mb-3">'.$productName.'</h3>
-                                                    <span class="text-truncate me-3"><i class="fa fa-map-marker-alt text-primary me-2"></i>'.$farmLocation.'</span>
-                                                    <span class="text-truncate me-0"><i class="far fa-money-bill-alt text-primary me-2"></i>' . $unitPrice . '</span>
-                                                    <span class="text-truncate me-3">'.$productCategory.'</span>
-                                                </div>
                                             </div>
 
                                             <div class="mb-5">
@@ -140,6 +134,7 @@ session_start();
                                         <div class="col-lg-4">
                                             <div class="bg-light rounded p-5 mb-4 wow slideInUp" data-wow-delay="0.1s">
                                                 <h4 class="mb-4">Product Summary</h4>
+                                                <p><i class="fa fa-angle-right text-primary me-2"></i>Product Name: '.$productName.'</p>
                                                 <p><i class="fa fa-angle-right text-primary me-2"></i>Published On: '.$creationDate.'</p>
                                                 <p><i class="fa fa-angle-right text-primary me-2"></i>Product Category: '.$productCategory.'</p>
                                                 <p><i class="fa fa-angle-right text-primary me-2"></i>Unit Price: '.$unitPrice.'</p>
@@ -183,7 +178,7 @@ session_start();
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a href="#">FarmConnect</a>, All Right Reserved. Designed By Group 1
+                            &copy; <a href="#">FarmConnect</a>, All Right Reserved.
                         </div>
                     </div>
                 </div>

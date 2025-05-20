@@ -30,6 +30,6 @@ $mail -> Body = $message;
 
 $mail -> send();
 
-header("Location: ./contact.html");
+header("Location: ./Contact.php");
 
 ?>

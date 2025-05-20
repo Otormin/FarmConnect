@@ -74,7 +74,7 @@ session_start();
                             <a href="Contact.php" class="nav-item nav-link">Contact</a>
                             <a href="./LoginAs.html" class="nav-item nav-link">Login</a>
                         </div>
-                        <a href="SignUpRoles.html" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">SIGN UP<i class="fa fa-arrow-right ms-3"></i></a>
+                        <a href="SignUpRoles.html" class="btn btn-primary rounded-0 py-4 px-lg-5 d-lg-block">SIGN UP<i class="fa fa-arrow-right ms-3"></i></a>
 
                     </div>
                 </nav>
@@ -115,7 +115,7 @@ session_start();
                             <a href="About.php" class="nav-item nav-link">About</a>
                             <a href="Contact.php" class="nav-item nav-link">Contact</a>
                         </div>
-                        <a href="Profile.php" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Profile<i class="fa fa-arrow-right ms-3"></i></a>
+                        <a href="Profile.php" class="btn btn-primary rounded-0 py-4 px-lg-5 d-lg-block">Profile<i class="fa fa-arrow-right ms-3"></i></a>
                     </div>
                 </nav>
             <!-- Navbar End -->
@@ -125,9 +125,9 @@ session_start();
         
         <!-- Search Start -->
             <div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px; display: flex; justify-content: center; align-items: center;">
-                <form action="" method="GET" style="display: flex;">
-                    <input type="text" name="search" placeholder = "Search Farmer" class="form-control border-0" style="width: 400px;" value="<?php if(isset($_GET['search'])){echo $_GET['search']; } ?>">
-                    <button type="submit" class="btn btn-dark border-0 w-100">Search</button>
+                <form action="" method="GET" style="display: flex; align-items: center; justify-content: center; width: 100%;">
+                    <input type="text" name="search" placeholder = "Search Farmer" class="form-control border-0" style="width: 25%;" value="<?php if(isset($_GET['search'])){echo $_GET['search']; } ?>">
+                    <button type="submit" class="btn btn-dark border-0 w-25">Search</button>
                 </form>
             </div>
         <!-- Search End -->
@@ -159,8 +159,8 @@ session_start();
                                             <h6 class="mb-3" style="display: inline;"><?= $farmers['firstName']; ?></h6>
                                             <h6 class="mb-3" style="display: inline;"><?= $farmers['lastName']; ?></h6>
                                             <p>Farm Location: <?= $farmers['farmLocation']; ?></p>
-                                            <p>Customer Phone Number: <?= $farmers['phoneNumber']; ?></p>
-                                            <p>Customer Email: <?= $farmers['email']; ?></p>
+                                            <p>Farmer Phone Number: <?= $farmers['phoneNumber']; ?></p>
+                                            <p>Farmer Email: <?= $farmers['email']; ?></p>
                                             <a class="btn btn-primary" href="ViewFarmerProfile.php?farmerId=<?= $farmers['farmerId']; ?>">View Farmer Profile</a></br></br>
                                         </div>
                                     </div></br></br>
@@ -198,8 +198,8 @@ session_start();
                                                 <h6 class="mb-3" style="display: inline;">'.$firstName.'</h6>
                                                 <h6 class="mb-3" style="display: inline;">'.$lastName.'</h6>
                                                 <p>Farm Location: '.$farmLocation.'</p>
-                                                <p>Customer Phone Number: '.$phoneNumber.'</p>
-                                                <p>Customer Email: '.$email.'</p>
+                                                <p>Farmer Phone Number: '.$phoneNumber.'</p>
+                                                <p>Farmer Email: '.$email.'</p>
                                                 <a class="btn btn-primary" href="ViewFarmerProfile.php?farmerId='.$farmerId.'">View Farmer Profile</a></br></br>
                                             </div>
                                         </div></br></br>';
@@ -237,7 +237,7 @@ session_start();
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a href="#">FarmConnect</a>, All Right Reserved. Designed By Group 1
+                            &copy; <a href="#">FarmConnect</a>, All Right Reserved. 
                         </div>
                     </div>
                 </div>
@@ -249,43 +249,6 @@ session_start();
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
-
-    <script>
-        let appliedWorkersSection = document.getElementById("appliedWorkersSection");
-        let orderSection = document.getElementById("orderSection");
-        let acceptedJobsSection = document.getElementById("acceptedJobsSection");
-        let unacceptedJobsSection = document.getElementById("unacceptedJobsSection");
-
-        let appliedWorkersSectionBtn = document.getElementById("appliedWorkersSectionBtn");
-        let orderSectionBtn = document.getElementById("orderSectionBtn");
-        let acceptedJobsSectionBtn = document.getElementById("acceptedJobsSectionBtn");
-        let unacceptedJobsSectionBtn = document.getElementById("unacceptedJobsSectionBtn");
-
-        let role = "<?php echo $_SESSION['role']; ?>"
-
-        if(role == "Farmer"){
-            appliedWorkersSectionBtn.addEventListener("click", function(){
-            appliedWorkersSection.style.display = "block";
-            orderSection.style.display = "none";
-            });
-            orderSectionBtn.addEventListener("click", function(){
-                appliedWorkersSection.style.display = "none";
-                orderSection.style.display = "block";
-            });
-        }
-        if(role == "Worker"){
-            acceptedJobsSectionBtn.addEventListener("click", function(){
-            acceptedJobsSection.style.display = "block";
-            unacceptedJobsSection.style.display = "none";
-            console.log("i am working")
-            });
-            unacceptedJobsSectionBtn.addEventListener("click", function(){
-                acceptedJobsSection.style.display = "none";
-                unacceptedJobsSection.style.display = "block";
-                console.log("i am working")
-            });
-        }
-    </script>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

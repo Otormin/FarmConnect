@@ -81,7 +81,7 @@ session_start();
                         <a href="About.php" class="nav-item nav-link">About</a>
                         <a href="Contact.php" class="nav-item nav-link">Contact</a>
                     </div>
-                    <a href="Profile.php" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Profile<i class="fa fa-arrow-right ms-3"></i></a>
+                    <a href="Profile.php" class="btn btn-primary rounded-0 py-4 px-lg-5 d-lg-block">Profile<i class="fa fa-arrow-right ms-3"></i></a>
                 </div>
             </nav>
         <!-- Navbar End -->
@@ -152,7 +152,7 @@ session_start();
                 if($role == 'Farmer'){
                     echo '<div>
                             <img src="'.$image.'" alt="" style="width: 100%; height: 650px;">
-                            <div style="padding-left: 50px; padding-top: 40px; padding-bottom: 40px; background-color: #EFFDF5;">
+                            <div style="padding-left: 50px; padding-top: 40px; padding-bottom: 40px; padding-right: 40px; background-color: #EFFDF5;">
                                 <h4 style="display: inline;">Name: '.$firstName.'</h4>
                                 <h4 style="display: inline;">'.$lastName.'</h4>
                                 <h4>Email: '.$email.'</h4>
@@ -162,15 +162,15 @@ session_start();
                                 <h4>Bank Account Name: '.$accountName.'</h4>
                                 <h4>Bank Name: '.$bankName.'</h4>
                             </div>
-                            <a href="EditFarmerAccount.php?updateId=' . $farmerId . '"><button class="btn btn-primary" style="padding: 10px; margin-right: 20px; margin-left: 50px; border-radius: 10px; width: 200px;">Edit Account</button></a>
-                            <a href="DeleteFarmerAccount.php?deleteId=' . $farmerId . '"><button class="btn btn-primary" style="padding: 10px; border-radius: 10px; width: 200px;">Delete Account</button></a>
+                            <a href="EditFarmerAccount.php?updateId=' . $farmerId . '"><button class="btn btn-primary" style="padding: 10px; margin-right: 20px; margin-left: 50px; border-radius: 10px; width: 25%;">Edit Account</button></a>
+                            <a href="DeleteFarmerAccount.php?deleteId=' . $farmerId . '"><button class="btn btn-primary" style="padding: 10px; border-radius: 10px; width: 25%;">Delete Account</button></a>
                         </div>';
                 }
 
                 if($role == 'Worker'){
                     echo '<div>
                             <img src="img/farmer2.jpeg" alt="" style="width: 100%; height: 650px;">
-                            <div style="padding-left: 50px; padding-top: 40px; padding-bottom: 40px; background-color: #EFFDF5;">
+                            <div style="padding-left: 50px; padding-top: 40px; padding-bottom: 40px; padding-right: 40px; background-color: #EFFDF5;">
                                 <h4 style="display: inline;">Name: '.$firstName.'</h4>
                                 <h4 style="display: inline;">'.$lastName.'</h4>
                                 <h4>Email: '.$email.'</h4>
@@ -180,22 +180,22 @@ session_start();
                                 <h4>Bank Account Name: '.$accountName.'</h4>
                                 <h4>Bank Name: '.$bankName.'</h4>
                             </div>
-                            <a href="EditWorkerAccount.php?updateId=' . $workerId . '"><button class="btn btn-primary" style="padding: 10px; margin-right: 20px; margin-left: 50px; border-radius: 10px; width: 200px;">Edit Account</button></a>
-                            <a href="DeleteWorkerAccount.php?deleteId=' . $workerId . '"><button class="btn btn-primary" style="padding: 10px; border-radius: 10px; width: 200px;">Delete Account</button></a></br></br></br>
+                            <a href="EditWorkerAccount.php?updateId=' . $workerId . '"><button class="btn btn-primary" style="padding: 10px; margin-right: 20px; margin-left: 50px; border-radius: 10px; width: 25%;">Edit Account</button></a>
+                            <a href="DeleteWorkerAccount.php?deleteId=' . $workerId . '"><button class="btn btn-primary" style="padding: 10px; border-radius: 10px; width: 25%;">Delete Account</button></a></br></br></br>
                         </div>';
                 }
 
                 if($role == 'Consumer'){
                     echo '<div>
                             <img src="img/consumer.jpeg" alt="" style="width: 100%; height: 650px;">
-                            <div style="padding-left: 50px; padding-top: 40px; padding-bottom: 40px; background-color: #EFFDF5;">
+                            <div style="padding-left: 50px; padding-top: 40px; padding-bottom: 40px; padding-right: 40px; background-color: #EFFDF5;">
                                 <h4 style="display: inline;">Name: '.$firstName.'</h4>
                                 <h4 style="display: inline;">'.$lastName.'</h4>
                                 <h4>Email: '.$email.'</h4>
                                 <h4>Phone Number: '.$phoneNumber.'</h4>
                             </div>
-                            <a href="EditConsumerAccount.php?updateId=' . $consumerId . '"><button class="btn btn-primary" style="padding: 10px; margin-right: 20px; margin-left: 50px; border-radius: 10px; width: 200px;">Edit Account</button></a>
-                            <a href="DeleteConsumerAccount.php?deleteId=' . $consumerId . '"><button class="btn btn-primary" style="padding: 10px; border-radius: 10px; width: 200px;">Delete Account</button></a></br></br></br>
+                            <a href="EditConsumerAccount.php?updateId=' . $consumerId . '"><button class="btn btn-primary" style="padding: 10px; margin-right: 20px; margin-left: 50px; border-radius: 10px; width: 25%;">Edit Account</button></a>
+                            <a href="DeleteConsumerAccount.php?deleteId=' . $consumerId . '"><button class="btn btn-primary" style="padding: 10px; border-radius: 10px; width: 25%;">Delete Account</button></a></br></br></br>
                         </div>';
                 }
             ?>
@@ -321,7 +321,9 @@ session_start();
             <?php
                 }
             ?>
-            <a href="Logout.php" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Logout<i class="fa fa-arrow-right ms-3"></i></a>
+            <div style="width=100%">
+                <a href="Logout.php"><button class="btn btn-primary" style="padding: 20px; width: 100%;">Logout<i class="fa fa-arrow-right ms-3"></i></button></a>
+            </div>
         <!-- Profile End -->
 
 
@@ -346,7 +348,7 @@ session_start();
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a href="#">FarmConnect</a>, All Right Reserved. Designed By Group 1
+                            &copy; <a href="#">FarmConnect</a>, All Right Reserved.
                         </div>
                     </div>
                 </div>

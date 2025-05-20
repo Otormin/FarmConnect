@@ -69,7 +69,7 @@
                     <a href="About.php" class="nav-item nav-link">About</a>
                     <a href="Contact.php" class="nav-item nav-link">Contact</a>
                 </div>
-                <a href="Profile.php" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Profile<i class="fa fa-arrow-right ms-3"></i></a>
+                <a href="Profile.php" class="btn btn-primary rounded-0 py-4 px-lg-5 d-lg-block">Profile<i class="fa fa-arrow-right ms-3"></i></a>
             </div>
         </nav>
         <!-- Navbar End -->
@@ -420,7 +420,7 @@
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a href="#">FarmConnect</a>, All Right Reserved. Designed By Group 1
+                            &copy; <a href="#">FarmConnect</a>, All Right Reserved.
                         </div>
                     </div>
                 </div>
@@ -441,7 +441,7 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-    <!-- Template Javascript -->
+    <!-- Javascript -->
     <script src="js/main.js"></script>
 </body>
 

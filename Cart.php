@@ -92,7 +92,7 @@ session_start();
                     <a href="About.php" class="nav-item nav-link">About</a>
                     <a href="Contact.php" class="nav-item nav-link">Contact</a>
                 </div>
-                <a href="Profile.php" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Profile<i class="fa fa-arrow-right ms-3"></i></a>
+                <a href="Profile.php" class="btn btn-primary rounded-0 py-4 px-lg-5 d-lg-block">Profile<i class="fa fa-arrow-right ms-3"></i></a>
             </div>
         </nav>
         <!-- Navbar End -->
@@ -101,14 +101,14 @@ session_start();
             $role = $_SESSION['role'];
             if($role == 'Farmer'){
                 echo '<div id="buttons" style="padding: 10px; width: 100%; display: flex; justify-content: center; align-items: center; background-color: #EFFDF5;">
-                        <button id="appliedWorkersSectionBtn" style="background-color: #007856; color: white; padding: 20px; margin: 20px; border-radius: 10px; width: 200px;">Applied Workers</button>
-                        <button id="orderSectionBtn" style="background-color: #007856; color: white; padding: 20px; border-radius: 10px; width: 200px;">Order</button>
+                        <button id="appliedWorkersSectionBtn" class="btn btn-primary" style="background-color: #007856; color: white; padding: 20px; margin: 20px; border-radius: 10px; width: 200px;">Applied Workers</button>
+                        <button id="orderSectionBtn" class="btn btn-primary" style="background-color: #007856; color: white; padding: 20px; border-radius: 10px; width: 200px;">Order</button>
                     </div>';
             }
             if($role == 'Worker'){
                 echo '<div id="buttons" style="padding: 10px; width: 100%; display: flex; justify-content: center; align-items: center; background-color: #EFFDF5;">
-                        <button id="acceptedJobsSectionBtn" style="background-color: #007856; color: white; padding: 20px; margin: 20px; border-radius: 10px; width: 200px;">Accepted Jobs</button>
-                        <button id="unacceptedJobsSectionBtn" style="background-color: #007856; color: white; padding: 20px; border-radius: 10px; width: 200px;">Unaccepted Jobs</button>
+                        <button id="acceptedJobsSectionBtn" class="btn btn-primary" style="background-color: #007856; color: white; padding: 20px; margin: 20px; border-radius: 10px; width: 200px;">Accepted Jobs</button>
+                        <button id="unacceptedJobsSectionBtn" class="btn btn-primary" style="background-color: #007856; color: white; padding: 20px; border-radius: 10px; width: 200px;">Unaccepted Jobs</button>
                     </div>';
             }
             if($role == 'Consumer'){
@@ -230,7 +230,7 @@ session_start();
             ?>
                     <section id="orderSection" style="background-color: #EFFDF5">
                         <h2>Order</h2>
-                        <div style="display: flex; flex-wrap; wrap">
+                        <div style="display: flex; flex-wrap: wrap">
                         <?php
                             $farmerId = $_SESSION['farmerId'];
                             $getDetails = "SELECT * FROM product_purchase WHERE farmerId = $farmerId AND isSelected = 1";
@@ -252,6 +252,7 @@ session_start();
                                             $productName = htmlspecialchars($row['productName']);
                                             $productCategory = htmlspecialchars($row['productCategory']);
                                             $unitPrice = htmlspecialchars($row['unitPrice']);
+                                            $totalAmount = $unitPrice * $purchaseQuantity;
                                             $quantity = htmlspecialchars($row['quantity']);
                                             $image = 'data:image/jpeg;base64,' . base64_encode($row['image']);
         
@@ -273,13 +274,14 @@ session_start();
                                                             <p>Unit Price: '.$unitPrice.'</p>
                                                             <p>Product Quantity: '.$quantity.'</p>
                                                             <p>Purchase Quantity: '.$purchaseQuantity.'</p>
+                                                            <p>Total Amount: '.$totalAmount.'</p>
                                                             <p>Date of Product Selection: '.$selectedDate.'</p>
                                                             <p>Customer Phone Number: '.$phoneNumber.'</p>
                                                             <p>Customer Email: '.$email.'</p>
                                                             <a class="btn btn-primary" href="ViewConsumerProfile.php?consumerId=' . $consumerId . '">View Customer Profile</a></br></br>
                                                             <a class="btn btn-primary" href="product-detail-farmer.php?productId=' . $productId . '">Product Details</a>
                                                         </div>
-                                                    </div>';
+                                                    </div></br></br>';
                                                 }
                                             }
                                         }
@@ -546,6 +548,7 @@ session_start();
                                             $productName = htmlspecialchars($row['productName']);
                                             $productCategory = htmlspecialchars($row['productCategory']);
                                             $unitPrice = htmlspecialchars($row['unitPrice']);
+                                            $totalAmount = $unitPrice * $purchaseQuantity;
                                             $quantity = htmlspecialchars($row['quantity']);
                                             $image = 'data:image/jpeg;base64,' . base64_encode($row['image']);
         
@@ -567,6 +570,7 @@ session_start();
                                                                 <p>Unit Price: '.$unitPrice.'</p>
                                                                 <p>Product Quantity: '.$quantity.'</p>
                                                                 <p>Purchase Quantity: '.$purchaseQuantity.'</p>
+                                                                <p>Total Amount: '.$totalAmount.'</p>
                                                                 <p>Date of Product Selection: '.$selectedDate.'</p>
                                                                 <p>Farmer Phone Number: '.$phoneNumber.'</p>
                                                                 <p>Farmer Email: '.$email.'</p>
@@ -574,7 +578,7 @@ session_start();
                                                                 <a class="btn btn-primary" href="product-detail.php?productId=' . $productId . '">Product Details</a>
                                                                 <a class="btn btn-primary" href="DeleteSelectedProduct.php?consumerId=' . $consumerId . '&productId=' . $productId . '&serialNumber=' . $serialNumber . '&purchaseQuantity=' . $purchaseQuantity . '">Delete</a>
                                                             </div>
-                                                        </div>';
+                                                        </div></br></br>';
                                                 }
                                             }
                                         }
@@ -613,7 +617,7 @@ session_start();
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a href="#">FarmConnect</a>, All Right Reserved. Designed By Group 1
+                            &copy; <a href="#">FarmConnect</a>, All Right Reserved.
                         </div>
                     </div>
                 </div>

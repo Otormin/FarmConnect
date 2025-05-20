@@ -73,7 +73,7 @@ session_start();
                             <a href="Contact.php" class="nav-item nav-link active">Contact</a>
                             <a href="./LoginAs.html" class="nav-item nav-link">Login</a>
                         </div>
-                        <a href="SignUpRoles.html" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">SIGN UP<i class="fa fa-arrow-right ms-3"></i></a>
+                        <a href="SignUpRoles.html" class="btn btn-primary rounded-0 py-4 px-lg-5 d-lg-block">SIGN UP<i class="fa fa-arrow-right ms-3"></i></a>
 
                     </div>
                 </nav>
@@ -114,7 +114,7 @@ session_start();
                             <a href="About.php" class="nav-item nav-link">About</a>
                             <a href="Contact.php" class="nav-item nav-link active">Contact</a>
                         </div>
-                        <a href="Profile.php" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Profile<i class="fa fa-arrow-right ms-3"></i></a>
+                        <a href="Profile.php" class="btn btn-primary rounded-0 py-4 px-lg-5 d-lg-block">Profile<i class="fa fa-arrow-right ms-3"></i></a>
                     </div>
                 </nav>
             <!-- Navbar End -->
@@ -218,7 +218,7 @@ session_start();
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a href="#">FarmConnect</a>, All Right Reserved. Designed By Group 1
+                            &copy; <a href="#">JobEntry</a>, All Right Reserved.
                         </div>
                     </div>
                 </div>
