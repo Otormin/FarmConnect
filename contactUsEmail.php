@@ -1,5 +1,7 @@
 <?php
 
+require __DIR__ . "/config.php";
+
 $name = $_POST["name"];
 $email = $_POST["email"];
 $subject = $_POST["subject"];
@@ -19,11 +21,11 @@ $mail -> Host = "smtp.gmail.com";
 $mail -> SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 $mail -> Port = 587;
 
-$mail -> Username = "yjesse330@gmail.com";
-$mail -> Password = "";
+$mail -> Username = $config["email"]["SENDING_EMAIL_USERNAME"];
+$mail -> Password = $config["email"]["SENDING_EMAIL_PASSWORD"];
 
 $mail -> setFrom($email, $name);
-$mail -> addAddress("yjesse330@gmail.com");
+$mail -> addAddress($config["email"]["SENDING_EMAIL_USERNAME"]);
 
 $mail -> Subject = $subject;
 $mail -> Body = $message;

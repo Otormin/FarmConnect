@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2025 at 08:34 PM
+-- Generation Time: Jun 07, 2025 at 12:19 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -44,7 +44,6 @@ CREATE TABLE `applied_workers` (
 
 INSERT INTO `applied_workers` (`serialNumber`, `jobId`, `workerId`, `farmerId`, `coverLetter`, `applicationDate`, `isAccepted`, `isApplied`) VALUES
 (4, 3, 1, 2, 'I am very fast at cutting grass', '2024-12-02', 1, 1),
-(5, 4, 1, 2, 'I love picking cotton', '2024-12-02', 0, 1),
 (6, 5, 1, 3, 'I hold the world record for milking cows', '2024-12-04', 0, 1);
 
 -- --------------------------------------------------------
@@ -135,7 +134,6 @@ CREATE TABLE `jobs` (
 
 INSERT INTO `jobs` (`jobId`, `farmerId`, `jobType`, `jobCategory`, `jobDescription`, `jobResponsibility`, `farmLocation`, `dailyRate`, `creationDate`, `dateLine`) VALUES
 (3, 2, 'Weeding', 'Farming Machinery', 'Clearing weed with cutlass', 'Clear the weed in 2 acres of land', 'ogun state', 10000, '2024-12-01', '2025-02-02'),
-(4, 2, 'Picking Cotton', 'Farming Tools', 'Carefully picking cotton', 'pick cotton over 2 plots of land', 'lagos state', 2000, '2024-12-02', '2025-03-02'),
 (5, 3, 'Milk Cows', 'Other', 'Use bucket and your hand to milk cows', 'Milk over 50 cows', 'lagos state', 1000, '2024-12-03', '2025-02-02'),
 (6, 8, 'Washing plates', 'Other', 'Wash a 100 plates', 'Wash 100 plates', 'Alapere', 1000, '2024-12-21', '2025-02-04');
 

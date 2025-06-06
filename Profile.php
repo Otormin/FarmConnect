@@ -3,6 +3,10 @@ include 'connect.php';
 
 session_start();
 
+if(!isset($_SESSION['farmerId']) && !isset($_SESSION['workerId']) && !isset($_SESSION['consumerId'])) {
+    $role = "";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -49,42 +53,89 @@ session_start();
 
 <body>
     <div class="container-xxl bg-white p-0">
-        <!-- Navbar Start -->
-        <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-                <a href="Homepage.php" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
-                    <h1>FarmConnect</h1>
-                </a>
-                <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto p-4 p-lg-0">
-                        <a href="Homepage.php" class="nav-item nav-link">Home</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
-                            <div class="dropdown-menu rounded-0 m-0">
-                                <a href="product-list-vegetable.php" class="dropdown-item">Vegetable</a>
-                                <a href="product-list-fruit.php" class="dropdown-item">Fruit</a>
-                                <a href="product-list-grain.php" class="dropdown-item">Grain</a>
-                                <a href="product-list-legume.php" class="dropdown-item">Legume</a>
-                                <a href="product-list-egg.php" class="dropdown-item">Egg</a>
-                                <a href="product-list-meatOrFish.php" class="dropdown-item">Meat or Fish</a>
-                                <a href="product-list-dairy.php" class="dropdown-item">Dairy</a>
-                                <a href="product-list-other.php" class="dropdown-item">Other</a>
+        <?php
+            if(!isset($_SESSION['role'])){
+        ?>
+            <!-- Navbar Start -->
+                <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+                    <a href="Index.php" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
+                        <h1>FarmConnect</h1>
+                    </a>
+                    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto p-4 p-lg-0">
+                            <a href="Index.php" class="nav-item nav-link">Home</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
+                                <div class="dropdown-menu rounded-0 m-0">
+                                    <a href="product-list-vegetable.php" class="dropdown-item">Vegetable</a>
+                                    <a href="product-list-fruit.php" class="dropdown-item">Fruit</a>
+                                    <a href="product-list-grain.php" class="dropdown-item">Grain</a>
+                                    <a href="product-list-legume.php" class="dropdown-item">Legume</a>
+                                    <a href="product-list-egg.php" class="dropdown-item">Egg</a>
+                                    <a href="product-list-meatOrFish.php" class="dropdown-item">Meat or Fish</a>
+                                    <a href="product-list-dairy.php" class="dropdown-item">Dairy</a>
+                                    <a href="product-list-other.php" class="dropdown-item">Other</a>
+                                </div>
                             </div>
+                            <a href="job-list.php" class="nav-item nav-link">Jobs</a>
+                            <a href="Farmers.php" class="nav-item nav-link">Farmers</a>
+                            <a href="Weather.php" class="nav-item nav-link">Weather</a>
+                            <a href="Blog.php" class="nav-item nav-link">Blog</a>
+                            <a href="About.php" class="nav-item nav-link">About</a>
+                            <a href="Contact.php" class="nav-item nav-link">Contact</a>
+                            <a href="./LoginAs.html" class="nav-item nav-link">Login</a>
                         </div>
-                        <a href="job-list.php" class="nav-item nav-link">Jobs</a>
-                        <a href="Cart.php" class="nav-item nav-link">Cart</a>
-                        <a href="Farmers.php" class="nav-item nav-link">Farmers</a>
-                        <a href="Weather.php" class="nav-item nav-link">Weather</a>
-                        <a href="Blog.php" class="nav-item nav-link">Blog</a>
-                        <a href="About.php" class="nav-item nav-link">About</a>
-                        <a href="Contact.php" class="nav-item nav-link">Contact</a>
+                        <a href="SignUpRoles.html" class="btn btn-primary rounded-0 py-4 px-lg-5 d-lg-block">SIGN UP<i class="fa fa-arrow-right ms-3"></i></a>
+
                     </div>
-                    <a href="Profile.php" class="btn btn-primary rounded-0 py-4 px-lg-5 d-lg-block">Profile<i class="fa fa-arrow-right ms-3"></i></a>
-                </div>
-            </nav>
-        <!-- Navbar End -->
+                </nav>
+            <!-- Navbar End -->
+        <?php
+            }
+            else{
+        ?>
+            <!-- Navbar Start -->
+                <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+                    <a href="Homepage.php" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
+                        <h1>FarmConnect</h1>
+                    </a>
+                    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto p-4 p-lg-0">
+                            <a href="Homepage.php" class="nav-item nav-link">Home</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
+                                <div class="dropdown-menu rounded-0 m-0">
+                                    <a href="product-list-vegetable.php" class="dropdown-item">Vegetable</a>
+                                    <a href="product-list-fruit.php" class="dropdown-item">Fruit</a>
+                                    <a href="product-list-grain.php" class="dropdown-item">Grain</a>
+                                    <a href="product-list-legume.php" class="dropdown-item">Legume</a>
+                                    <a href="product-list-egg.php" class="dropdown-item">Egg</a>
+                                    <a href="product-list-meatOrFish.php" class="dropdown-item">Meat or Fish</a>
+                                    <a href="product-list-dairy.php" class="dropdown-item">Dairy</a>
+                                    <a href="product-list-other.php" class="dropdown-item">Other</a>
+                                </div>
+                            </div>
+                            <a href="job-list.php" class="nav-item nav-link">Jobs</a>
+                            <a href="Cart.php" class="nav-item nav-link">Cart</a>
+                            <a href="Farmers.php" class="nav-item nav-link">Farmers</a>
+                            <a href="Weather.php" class="nav-item nav-link">Weather</a>
+                            <a href="Blog.php" class="nav-item nav-link">Blog</a>
+                            <a href="About.php" class="nav-item nav-link">About</a>
+                            <a href="Contact.php" class="nav-item nav-link">Contact</a>
+                        </div>
+                        <a href="Profile.php" class="btn btn-primary rounded-0 py-4 px-lg-5 d-lg-block">Profile<i class="fa fa-arrow-right ms-3"></i></a>
+                    </div>
+                </nav>
+            <!-- Navbar End -->
+        <?php
+            }
+        ?>
 
 
         <!-- Header Start -->
@@ -197,6 +248,9 @@ session_start();
                             <a href="EditConsumerAccount.php?updateId=' . $consumerId . '"><button class="btn btn-primary" style="padding: 10px; margin-right: 20px; margin-left: 50px; border-radius: 10px; width: 25%;">Edit Account</button></a>
                             <a href="DeleteConsumerAccount.php?deleteId=' . $consumerId . '"><button class="btn btn-primary" style="padding: 10px; border-radius: 10px; width: 25%;">Delete Account</button></a></br></br></br>
                         </div>';
+                }
+                if($role == ""){
+                    echo '<div style="margin-top: 50px; margin-bottom: 50px">No profile available <a href="LoginAs.html"><button class="btn btn-primary" style="padding: 5px; width: 100px;">Login</button></a></div>';
                 }
             ?>
         <!-- Header End -->
@@ -320,10 +374,19 @@ session_start();
                     </section>
             <?php
                 }
+                if($role == ""){
+                    echo '';
+                }
+                else{
             ?>
+
             <div style="width=100%">
                 <a href="Logout.php"><button class="btn btn-primary" style="padding: 20px; width: 100%;">Logout<i class="fa fa-arrow-right ms-3"></i></button></a>
             </div>
+
+            <?php
+                }
+            ?>
         <!-- Profile End -->
 
 
