@@ -125,90 +125,118 @@ session_start();
 <body>
     
     <style>
+        h3 {
+            font-size: 2rem; /* More flexible */
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #343a40;
+        }
 
-h3 {
-    font-size: 40px;
-    text-align: center;
-    margin-bottom: 17.5px;
-    color: #343a40;
-}
+        p {
+            text-align: center;
+            font-size: 1rem;
+            line-height: 1.6rem;
+            letter-spacing: 0.5px;
+            color: rgba(0, 0, 0, 0.6);
+        }
 
-p {
-    text-align: center;
-    font-size: 1.05rem;
-    line-height: 1.75rem;
-    letter-spacing: 0.6px;
-    color: rgb(0, 0, 0, .5);
-}
+        .section-section1 {
+            margin: 2rem auto;
+            padding: 2rem;
+            max-width: 1000px;
+            background-color: #e6ffe6;
+            border-radius: 8px;
+        }
 
-.section-section1 {
-    margin: 2.5rem 170px;
-    padding: 2rem 80px;
-    background-color: #e6ffe6;
-}
+        .section-section3 .second-image {
+            position: relative;
+            height: 300px;
+            margin: 2rem auto;
+            max-width: 100%;
+        }
 
-.section-section3 .second-image {
-    position: relative;
-    height: 450px;
-    margin: auto;
-}
+        .section-section3 .second-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0; left: 0;
+        }
 
-.section-section3 .second-image img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-}
+        .second-image-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
 
-.second-image-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
+        h6 {
+            color: white;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+        }
 
-h6 {
-    color: white;
-    font-size: 3.5rem;
-    font-weight: 900;
-    letter-spacing: 2px;
-}
+        .overlay2 {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.55);
+        }
 
-.overlay2 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.55);
-}
+        .inside-section3, .inside-section3-1 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem 1rem;
+        }
 
-.inside-section3, .inside-section3-1 {
-    display: flex;
-    padding: 1.5rem 170px;
-    margin-bottom: 25px;
-    text-align: center;
-    justify-content: space-between;
-    align-items: center;
-}
+        .section-inside {
+            flex: 1 1 250px;
+            max-width: 300px;
+            text-align: center;
+        }
 
-span {
-    margin-bottom: 10px;
-}
+        .section-inside span img {
+            height: 55px;
+        }
 
-span img {
-    height: 55px;
-}
+        h4 {
+            margin-top: 0.75rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
 
-h4 {
-    margin-bottom: 10px;
-}
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h3 {
+                font-size: 1.75rem;
+            }
 
-.section-inside {
-    padding-left: 7px;
-    padding-right: 7px;
-}
+            h6 {
+                font-size: 100%;
+            }
+
+            .section-section1 {
+                padding: 1.5rem;
+            }
+
+            .inside-section3, .inside-section3-1 {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .section-inside {
+                max-width: 100%;
+            }
+
+            .section-section3 .second-image {
+                height: 200px;
+            }
+        }
     </style>
 
 
@@ -264,7 +292,7 @@ h4 {
                     <h4> Transparency </h4>
                     <p> Build trust with real-time communication and secure transactions. </p>
                 </div>
-            <div class="section-insid1">
+            <div class="section-inside">
                     <span><img src="img/efficiency.png" alt=""></span>
                     <h4> Efficiency </h4>
                     <p> Simplify the process of buying, selling, and hiring within the agricultural sector. </p>
@@ -282,7 +310,6 @@ h4 {
         <img src="img/strawberries.jpg" alt="Strawberries">
         <div class="overlay2"></div>
             <div class="second-image-text"><h6> Our mission is to make crop production more profitable, efficient and safe. </h6></div>
-            <p></p>
         </div>
         </div>
 
